@@ -1,30 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
+
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace AccessDemo
+using System.Threading;
+
+namespace AccessDemoUIver
 {
-    //此class範圍內階允許指標操作
-    unsafe class Program
+    unsafe public partial class Form1 : Form
     {
+        public Form1()
+        {
+            InitializeComponent();
+        }
 
+        bool running = false;
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (running)
+            {
+                MessageBox.Show("running....please wai.");
+                return;
+            }
+
+            new Thread(() =>
+            {
+                test();
+                running = false;
+            }).Start();
+        }
+
+        //--
         static uint* ScreenBuf1x, ScreenBufDst;
-
-
-
         static int srcH = 1440;//default sample height
         static int srcW = 1536;//default sample width
 
-        static void Main(string[] args)
+        static void test()
         {
             //init test param
             int counts = 500;
@@ -63,6 +86,7 @@ namespace AccessDemo
             Console.WriteLine("cost : " + st.ElapsedMilliseconds);
             Console.WriteLine("fps : " + fps + "\n");
 
+
             Console.WriteLine("Copy by uint");
             st.Restart();
             for (int i = 0; i < counts; i++) CopyByUint(ScreenBuf1x, srcW, srcH, ScreenBufDst);
@@ -72,7 +96,7 @@ namespace AccessDemo
             Console.WriteLine("cost : " + st.ElapsedMilliseconds);
             Console.WriteLine("fps : " + fps + "\n");
 
-            
+
             Console.WriteLine("Copy by ulong"); // 需要被8byte整除
             st.Restart();
             for (int i = 0; i < counts; i++) CopyByUlong(ScreenBuf1x, srcW, srcH, ScreenBufDst);
@@ -133,14 +157,12 @@ namespace AccessDemo
             Console.WriteLine("cost : " + st.ElapsedMilliseconds);
             Console.WriteLine("fps : " + fps + "\n");
 
-
-
-            Console.WriteLine("Enter to exit..");
-            Console.ReadLine();
-
-
             Marshal.FreeHGlobal((IntPtr)ScreenBuf1x);
-            Marshal.FreeHGlobal((IntPtr)ScreenBufDst);
+            Marshal.FreeHGlobal((IntPtr)ScreenBufDst );
+
+
+            // Console.WriteLine("Enter to exit..");
+            // Console.ReadLine();
 
         }
 
@@ -295,5 +317,10 @@ namespace AccessDemo
                 _t[0] = (byte)(b2 >> 1);
             }
         }
+
+
+
+
+        //--
     }
 }

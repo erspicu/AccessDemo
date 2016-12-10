@@ -1,0 +1,8 @@
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\bin\Debug\AccessDemoUIver.exe.config
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\bin\Debug\AccessDemoUIver.exe
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\bin\Debug\AccessDemoUIver.pdb
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\obj\Debug\AccessDemoUIver.Form1.resources
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\obj\Debug\AccessDemoUIver.Properties.Resources.resources
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\obj\Debug\AccessDemoUIver.csproj.GenerateResource.Cache
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\obj\Debug\AccessDemoUIver.exe
+C:\Users\abraxas\Dropbox\nes_dev\AccessDemo\AccessDemoUIver\obj\Debug\AccessDemoUIver.pdb
