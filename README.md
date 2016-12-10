@@ -1,8 +1,12 @@
 # AccessDemo
 C#影像指標存取各種方式效率測試
 我的測試結果
+
+
 x64 64bit mode
 Version: 4.0.30319.42000
+
+
 [測試資料搬移速度]
 
 Copy by bytes
