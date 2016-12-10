@@ -74,6 +74,10 @@ namespace AccessDemoUIver
             if (IntPtr.Size == 4) Console.WriteLine("x86 32bit mode");
             else if (IntPtr.Size == 8) Console.WriteLine("x64 64bit mode");
 
+
+            //.net version
+            Console.WriteLine("Version: {0}", Environment.Version.ToString());
+
             //check image data move speed
             Console.WriteLine("[測試資料搬移速度]\n");
 
